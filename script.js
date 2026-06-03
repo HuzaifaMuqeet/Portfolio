@@ -1,105 +1,59 @@
 /* ═══════════════════════════════════════════
-   HUZAIFA MUQEET — PORTFOLIO SCRIPTS
+   HUZAIFA MUQEET — PORTFOLIO SCRIPTS v2
    ═══════════════════════════════════════════ */
 
-/* ── CANVAS ANIMATED GRID ── */
-const canvas = document.getElementById('canvas-bg');
-const ctx = canvas.getContext('2d');
-let W, H, mouseX = -1000, mouseY = -1000;
-
-function resizeCanvas() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
-
-const GRID = 48;
-const dots = [];
-
-function buildDots() {
-  dots.length = 0;
-  const cols = Math.ceil(W / GRID) + 1;
-  const rows = Math.ceil(H / GRID) + 1;
-  for (let r = 0; r <= rows; r++) {
-    for (let c = 0; c <= cols; c++) {
-      dots.push({ x: c * GRID, y: r * GRID, ox: c * GRID, oy: r * GRID });
-    }
+/* ── VANTA.JS NET BACKGROUND ── */
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof VANTA !== 'undefined' && typeof THREE !== 'undefined') {
+    VANTA.NET({
+      el: '#vanta-bg',
+      THREE: THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00d4ff,
+      backgroundColor: 0x060912,
+      points: 9.0,
+      maxDistance: 22.0,
+      spacing: 17.0,
+      showDots: true,
+    });
   }
-}
-buildDots();
-window.addEventListener('resize', buildDots);
-
-function drawGrid() {
-  ctx.clearRect(0, 0, W, H);
-  const t = Date.now() / 1000;
-
-  /* Grid Lines */
-  ctx.beginPath();
-  ctx.strokeStyle = 'rgba(0,180,220,0.07)';
-  ctx.lineWidth = 0.5;
-  const cols = Math.ceil(W / GRID) + 1;
-  const rows = Math.ceil(H / GRID) + 1;
-  for (let c = 0; c <= cols; c++) {
-    ctx.moveTo(c * GRID, 0);
-    ctx.lineTo(c * GRID, H);
-  }
-  for (let r = 0; r <= rows; r++) {
-    ctx.moveTo(0, r * GRID);
-    ctx.lineTo(W, r * GRID);
-  }
-  ctx.stroke();
-
-  /* Glowing dots at intersections */
-  dots.forEach(d => {
-    const dist = Math.hypot(d.x - mouseX, d.y - mouseY);
-    const proximity = Math.max(0, 1 - dist / 200);
-    const wave = Math.sin(t * 1.5 + (d.ox + d.oy) * 0.015) * 0.5 + 0.5;
-    const alpha = 0.08 + wave * 0.06 + proximity * 0.6;
-    const r = 1.2 + proximity * 3 + wave * 0.5;
-    ctx.beginPath();
-    ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
-    if (proximity > 0.1) {
-      ctx.fillStyle = `rgba(0,212,255,${alpha})`;
-    } else {
-      ctx.fillStyle = `rgba(0,150,200,${alpha})`;
-    }
-    ctx.fill();
-  });
-
-  requestAnimationFrame(drawGrid);
-}
-drawGrid();
-
-/* ── CUSTOM CURSOR ── */
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-let rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-  dot.style.left = e.clientX + 'px';
-  dot.style.top = e.clientY + 'px';
-  rx = e.clientX;
-  ry = e.clientY;
 });
 
-function animRing() {
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-}
-animRing();
+/* ── CROSSHAIR CURSOR ── */
+const cursorGlow  = document.getElementById('cursor-glow');
+const cursorCross = document.getElementById('cursor-cross');
+let mouseX = -1000, mouseY = -1000;
+let glowX = -1000, glowY = -1000;
 
-document.querySelectorAll('a, button, .skill-tag, .exp-item, .project-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    dot.classList.add('hovered');
-    ring.classList.add('hovered');
-  });
-  el.addEventListener('mouseleave', () => {
-    dot.classList.remove('hovered');
-    ring.classList.remove('hovered');
-  });
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  // Cross snaps instantly
+  cursorCross.style.left = e.clientX + 'px';
+  cursorCross.style.top  = e.clientY + 'px';
+});
+
+// Glow follows with lerp for smooth lag
+function animGlow() {
+  glowX += (mouseX - glowX) * 0.08;
+  glowY += (mouseY - glowY) * 0.08;
+  cursorGlow.style.left = glowX + 'px';
+  cursorGlow.style.top  = glowY + 'px';
+  requestAnimationFrame(animGlow);
+}
+animGlow();
+
+// Hover state — expand/change color
+const hoverTargets = document.querySelectorAll('a, button, .skill-tag, .exp-item, .project-card, .contact-item, .ham');
+hoverTargets.forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hovered'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hovered'));
 });
 
 /* ── TYPEWRITER ── */
@@ -130,16 +84,14 @@ function type() {
     }
   }
   tw.innerHTML = `<span style="color:var(--cyan)">&gt; </span>${phrase.slice(0, ci)}<span class="typewriter-cursor">|</span>`;
-  setTimeout(type, deleting ? 50 : 90);
+  setTimeout(type, deleting ? 48 : 88);
 }
 type();
 
 /* ── SCROLL REVEAL ── */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
+    if (e.isIntersecting) e.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
 
@@ -154,7 +106,6 @@ window.addEventListener('scroll', () => {
 function toggleMenu() {
   document.getElementById('mobile-menu').classList.toggle('open');
 }
-
 function closeMenu() {
   document.getElementById('mobile-menu').classList.remove('open');
 }
@@ -162,11 +113,11 @@ function closeMenu() {
 /* ── CONTACT FORM ── */
 function handleSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById('fname').value;
-  const email = document.getElementById('femail').value;
+  const name    = document.getElementById('fname').value;
+  const email   = document.getElementById('femail').value;
   const subject = document.getElementById('fsubject').value || 'Portfolio Inquiry';
-  const msg = document.getElementById('fmsg').value;
-  const body = encodeURIComponent(`Hi Huzaifa,\n\nMy name is ${name} (${email}).\n\n${msg}`);
+  const msg     = document.getElementById('fmsg').value;
+  const body    = encodeURIComponent(`Hi Huzaifa,\n\nMy name is ${name} (${email}).\n\n${msg}`);
   window.location.href = `mailto:huzaifamuqeet2@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
   document.getElementById('form-success').style.display = 'block';
   document.getElementById('fsubmit').textContent = '✓ Sent!';
@@ -181,4 +132,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
+});
+
+/* ── PROJECT IMAGE LAZY LOAD ── */
+// When images load successfully, add .loaded class for fade-in
+document.querySelectorAll('.project-image img').forEach(img => {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add('loaded');
+    img.closest('.project-image').classList.remove('no-img');
+  } else {
+    img.addEventListener('load', () => {
+      img.classList.add('loaded');
+      img.closest('.project-image').classList.remove('no-img');
+    });
+    img.addEventListener('error', () => {
+      img.closest('.project-image').classList.add('no-img');
+    });
+  }
 });

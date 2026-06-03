@@ -12,15 +12,21 @@
 <title>Huzaifa Muqeet — Full-Stack & AI Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="cursor-dot" id="cursor-dot"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
+<!-- CUSTOM CURSOR -->
+<div class="cursor-glow" id="cursor-glow"></div>
+<div class="cursor-cross" id="cursor-cross">
+  <span class="cc-h"></span>
+  <span class="cc-v"></span>
+  <span class="cc-dot"></span>
+</div>
 
-<canvas id="canvas-bg"></canvas>
+<!-- VANTA BACKGROUND -->
+<div id="vanta-bg"></div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -49,7 +55,7 @@
 
 <!-- SOCIAL BAR -->
 <div class="social-bar">
-  <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="social-link" title="GitHub">
+  <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="social-link" title="GitHub">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
   </a>
   <a href="https://www.linkedin.com/in/huzaifa-muqeet" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
@@ -67,35 +73,88 @@
 <!-- ═══════════════════════════════════════════ HERO -->
 <section id="hero">
   <div class="container">
-    <div class="hero-badge">
-      <span>AVAILABLE FOR OPPORTUNITIES</span>
-    </div>
-    <h1 class="hero-name">
-      Hello, I'm<br>
-      <span class="accent">Huzaifa</span> <span class="accent-2">Muqeet</span>
-    </h1>
-    <p class="hero-typewriter" id="typewriter"><span class="typewriter-cursor">|</span></p>
-    <p class="hero-desc">
-      Full-Stack & AI Developer building scalable web applications, chatbot platforms, and AI-integrated SaaS products. Currently completing my BS in Software Engineering at the University of Gujrat.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View My Work →</a>
-      <a href="#contact" class="btn-outline">Let's Talk</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">7+</div>
-        <div class="stat-label">COMPANIES WORKED WITH</div>
+    <div class="hero-layout">
+
+      <!-- LEFT: Text content -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span>AVAILABLE FOR OPPORTUNITIES</span>
+        </div>
+        <h1 class="hero-name">
+          Hello, I'm<br>
+          <span class="accent">Huzaifa</span> <span class="accent-2">Muqeet</span>
+        </h1>
+        <p class="hero-typewriter" id="typewriter"><span class="typewriter-cursor">|</span></p>
+        <p class="hero-desc">
+          Full-Stack & AI Developer building scalable web applications, chatbot platforms, and AI-integrated SaaS products. Currently completing my BS in Software Engineering at the University of Gujrat.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work →</a>
+          <a href="#contact" class="btn-outline">Let's Talk</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">7+</div>
+            <div class="stat-label">COMPANIES</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <div class="stat-num">12+</div>
+            <div class="stat-label">PROJECTS</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <div class="stat-num">2+</div>
+            <div class="stat-label">YEARS EXP</div>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="stat-num">12+</div>
-        <div class="stat-label">PROJECTS SHIPPED</div>
+
+      <!-- RIGHT: Animated visual panel -->
+      <div class="hero-right">
+        <div class="hero-visual">
+          <!-- Orbit rings -->
+          <div class="orbit orbit-1">
+            <div class="orbit-dot od-1"></div>
+          </div>
+          <div class="orbit orbit-2">
+            <div class="orbit-dot od-2"></div>
+          </div>
+          <div class="orbit orbit-3">
+            <div class="orbit-dot od-3"></div>
+          </div>
+
+          <!-- Center card -->
+          <div class="hv-center">
+            <div class="hv-avatar">HM</div>
+            <div class="hv-status">
+              <span class="hv-pulse"></span>
+              <span>Open to Work</span>
+            </div>
+          </div>
+
+          <!-- Floating tech chips -->
+          <div class="tech-chip chip-react">⚛ React</div>
+          <div class="tech-chip chip-node">⬡ Node.js</div>
+          <div class="tech-chip chip-ai">🤖 AI/ML</div>
+          <div class="tech-chip chip-pg">🗄 PostgreSQL</div>
+          <div class="tech-chip chip-ts">TS</div>
+          <div class="tech-chip chip-docker">🐳 Docker</div>
+
+          <!-- Stat cards floating -->
+          <div class="hv-stat-card hv-sc-1">
+            <span class="hv-sc-num">12+</span>
+            <span class="hv-sc-label">Projects Shipped</span>
+          </div>
+          <div class="hv-stat-card hv-sc-2">
+            <span class="hv-sc-num">7+</span>
+            <span class="hv-sc-label">Companies</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="stat-num">2+</div>
-        <div class="stat-label">YEARS EXPERIENCE</div>
-      </div>
+
     </div>
+
     <div class="hero-scroll">
       <span>SCROLL</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -140,7 +199,7 @@
             <div>&nbsp;&nbsp;<span class="t-key">"focus"</span><span class="t-comment">: [</span></div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"React"</span><span class="t-comment">,</span> <span class="t-val">"Node.js"</span><span class="t-comment">,</span> <span class="t-val">"AI/ML"</span></div>
             <div>&nbsp;&nbsp;<span class="t-comment">],</span></div>
-            <div>&nbsp;&nbsp;<span class="t-key">"github"</span><span class="t-comment">:</span> <a href="https://github.com/huzaifa-4" target="_blank" class="t-link">"github.com/huzaifa-4"</a><span class="t-comment">,</span></div>
+            <div>&nbsp;&nbsp;<span class="t-key">"github"</span><span class="t-comment">:</span> <a href="https://github.com/huzaifamuqeet" target="_blank" class="t-link">"github.com/huzaifamuqeet"</a><span class="t-comment">,</span></div>
             <div>&nbsp;&nbsp;<span class="t-key">"status"</span><span class="t-comment">:</span> <span class="t-val">"open_to_work: true"</span></div>
             <div><span class="t-comment">}</span></div>
             <div>&nbsp;</div>
@@ -250,32 +309,15 @@
       <div class="exp-item reveal">
         <div class="exp-header">
           <div>
-            <div class="exp-role">Web Developer</div>
-            <div class="exp-company">AA Empire Properties</div>
+            <div class="exp-role">Web Developer & Lead Manager</div>
+            <div class="exp-company">AA Empire Properties · ICSDI Conference (Venture-Z)</div>
           </div>
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;">
-            <span class="exp-date">Jan 2026 – Apr 2026 · 4 mos</span>
-            <span class="exp-type">Part-time · Remote · Islamabad, Pakistan</span>
+            <span class="exp-date">2024 – Present</span>
+            <span class="exp-type">Dual Role · Remote & On-site</span>
           </div>
         </div>
-        <p class="exp-desc">Specialized in website development, maintenance, and optimization for a real estate firm. Developed and maintained modern, responsive, SEO-friendly property listing websites. Fixed bugs, handled support queries, optimized site speed and search engine rankings, and implemented frontend components using JavaScript and modern frameworks. Ensured mobile-first design, accessibility, and cross-browser compatibility while maintaining clean, reusable, and well-documented code for long-term maintainability. Collaborated with designers and stakeholders to deliver scalable web solutions.</p>
-        <div class="exp-tags">
-          <span class="exp-tag">React</span><span class="exp-tag">HTML/CSS</span><span class="exp-tag">JavaScript</span><span class="exp-tag">SEO</span><span class="exp-tag">Performance</span><span class="exp-tag">Responsive Design</span>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Lead Manager & QA Engineer</div>
-            <div class="exp-company">ICSDI Conference — Venture-Z</div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;">
-            <span class="exp-date">Jan 2026 – Feb 2026 · 2 mos</span>
-            <span class="exp-type">Seasonal · Remote · Riyadh, Saudi Arabia</span>
-          </div>
-        </div>
-        <p class="exp-desc">Organized as part of the prestigious 3rd International Conference on Sustainability: Developments and Innovations (ICSDI 2026), Venture-Z brought together leading minds in sustainability and innovation. Managed QA processes and team coordination, overseeing deliverable quality, stakeholder communications, and platform readiness for the conference.</p>
+        <p class="exp-desc">Leading web development for AA Empire Properties while concurrently managing operations for the ICSDI Conference under Venture-Z. Responsibilities span full-stack web delivery, team coordination, quality assurance, and event management.</p>
         <div class="exp-tags">
           <span class="exp-tag">QA Engineering</span><span class="exp-tag">Team Leadership</span><span class="exp-tag">Project Management</span>
         </div>
@@ -292,7 +334,7 @@
             <span class="exp-type">Full-time · Hybrid · Islamabad, Pakistan</span>
           </div>
         </div>
-        <p class="exp-desc">Designed, developed, and maintained responsive websites using modern web technologies including PHP, Vue.js, JavaScript, and CMS platforms like WordPress/WooCommerce. Managed full-stack web functionalities including UI/UX improvements, plugin integrations, SEO optimizations, and performance enhancements. Delivered measurable improvements in site metrics and maintained corporate communications and business process improvement standards.</p>
+        <p class="exp-desc">Designed, developed, and maintained responsive websites using modern web technologies including PHP, Vue.js, JavaScript, and CMS platforms like WordPress/WooCommerce. Managed full-stack web functionalities including UI/UX improvements, plugin integrations, SEO optimizations, and performance enhancements.</p>
         <div class="exp-tags">
           <span class="exp-tag">PHP</span><span class="exp-tag">Vue.js</span><span class="exp-tag">WordPress</span><span class="exp-tag">WooCommerce</span><span class="exp-tag">SEO</span><span class="exp-tag">UI/UX</span>
         </div>
@@ -309,7 +351,7 @@
             <span class="exp-type">Internship · Remote</span>
           </div>
         </div>
-        <p class="exp-desc">Developed full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js), implementing scalable and responsive solutions. Worked on cloud-based solutions leveraging AWS and Azure, ensuring optimized performance and high availability. Applied AI and machine learning techniques to automate workflows and enhance data-driven decision-making. Contributed to end-to-end SDLC including requirement analysis, design, development, testing, and deployment. Collaborated in agile teams using Git, GitHub, and CI/CD pipelines. Implemented RESTful APIs and integrated third-party services. Focused on performance optimization and scalable architecture to deliver enterprise-grade solutions. Gained specialization in DevOps and Generative AI for Web Developers.</p>
+        <p class="exp-desc">Developed full-stack web applications using the MERN stack, implementing scalable and responsive solutions. Worked on cloud-based solutions leveraging AWS and Azure. Applied AI and machine learning techniques to automate workflows and enhance data-driven decision-making.</p>
         <div class="exp-tags">
           <span class="exp-tag">MERN</span><span class="exp-tag">AWS</span><span class="exp-tag">Azure</span><span class="exp-tag">AI/ML</span><span class="exp-tag">CI/CD</span><span class="exp-tag">Agile</span><span class="exp-tag">DevOps</span><span class="exp-tag">Gen AI</span>
         </div>
@@ -326,7 +368,7 @@
             <span class="exp-type">Internship · Remote · Islamabad, Pakistan</span>
           </div>
         </div>
-        <p class="exp-desc">Developed a Student Management System using ASP.NET, contributing to both frontend and backend modules. Gained hands-on experience in database integration, user interface design, and implementation of core functionalities including student registration, attendance tracking, and performance monitoring. Specialization area: ASP.NET and ASP.NET MVC.</p>
+        <p class="exp-desc">Developed a Student Management System using ASP.NET, contributing to both frontend and backend modules. Gained hands-on experience in database integration, user interface design, and implementation of core functionalities including student registration, attendance tracking, and performance monitoring.</p>
         <div class="exp-tags">
           <span class="exp-tag">ASP.NET</span><span class="exp-tag">ASP.NET MVC</span><span class="exp-tag">C#</span><span class="exp-tag">SQL Server</span><span class="exp-tag">UI/UX</span>
         </div>
@@ -360,7 +402,7 @@
             <span class="exp-type">Internship · On-site · Gujrat, Pakistan</span>
           </div>
         </div>
-        <p class="exp-desc">Performed database management tasks and assisted with office administration, clerical duties, and data entry. Handled customer inquiries and provided support. Organized and maintained filing systems and coordinated with team members to ensure smooth office operations. Skills applied: Project Management, Communication and Collaboration.</p>
+        <p class="exp-desc">Performed database management tasks and assisted with office administration, clerical duties, and data entry. Handled customer inquiries and provided support. Organized and maintained filing systems and coordinated with team members.</p>
         <div class="exp-tags">
           <span class="exp-tag">Database Management</span><span class="exp-tag">Data Entry</span><span class="exp-tag">Administration</span><span class="exp-tag">Customer Support</span>
         </div>
@@ -380,39 +422,46 @@
 
       <!-- LYRA – Flagship Full Width -->
       <div class="project-card featured reveal" style="grid-column: span 2;">
+        <!-- Project Image -->
+        <div class="project-image">
+          <img src="images/lyra-preview.png" alt="Lyra — AI-Powered Project Management System" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">🤖</span>
+            <span class="pip-text">Add project screenshot<br><code>images/lyra-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon cyan">🤖</div>
           <div style="display:flex;gap:0.5rem;align-items:center;">
             <span class="project-badge">FLAGSHIP · FINAL YEAR PROJECT</span>
-            <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link" title="GitHub">
+            <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link" title="GitHub">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
             </a>
           </div>
         </div>
         <div class="project-body">
           <h3 class="project-title">Lyra — AI-Powered Project Management System</h3>
-          <p class="project-desc" style="margin-bottom:1.25rem;">A comprehensive, web-based project management platform designed to enhance team collaboration, streamline workflow automation, and ensure project transparency through intelligent AI-driven functionalities. Built to rival tools like Jira and Asana while catering to SMEs, startups, and educational institutions — with a deep focus on AI, accountability, and real-time decision tracing.</p>
+          <p class="project-desc" style="margin-bottom:1.25rem;">A comprehensive, web-based project management platform designed to enhance team collaboration, streamline workflow automation, and ensure project transparency through intelligent AI-driven functionalities. Built to rival tools like Jira and Asana while catering to SMEs, startups, and educational institutions.</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.25rem;">
             <div>
-              <p style="font-size:0.78rem;color:var(--cyan);font-family:'DM Mono',monospace;letter-spacing:0.08em;margin-bottom:0.6rem;">CORE FEATURES</p>
+              <p style="font-size:0.78rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;margin-bottom:0.6rem;">CORE FEATURES</p>
               <ul class="project-feature-list">
-                <li>🔐 <strong>Role-Based Authentication</strong> — Secure, structured access for Admins, Project Managers, and Team Members with JWT authentication and GDPR-compliant data protection</li>
-                <li>📧 <strong>Invitation-Based Team Onboarding</strong> — Project Managers invite team members via personalized email links with OTP verification for secure onboarding</li>
-                <li>🧠 <strong>AI Task Generation Engine</strong> — Converts project briefs, documents, or media inputs into fully structured task lists using a custom-trained Python AI model (PyTorch/TensorFlow); the standout innovation of the platform</li>
-                <li>📋 <strong>Multi-View Task Management</strong> — Kanban boards, Gantt charts, and calendar views to track project progress across all team members</li>
-                <li>✅ <strong>Approval-Based Submission Workflow</strong> — Team members submit deliverables with time logs and self-assessments; Project Managers review, approve, and generate Excel-based payroll and performance reports</li>
+                <li>🔐 <strong>Role-Based Authentication</strong> — Secure access for Admins, PMs, and Team Members with JWT and GDPR compliance</li>
+                <li>📧 <strong>Invitation-Based Onboarding</strong> — Email invites with OTP verification for secure team onboarding</li>
+                <li>🧠 <strong>AI Task Generation Engine</strong> — Converts project briefs into structured task lists using a custom PyTorch/TensorFlow model</li>
+                <li>📋 <strong>Multi-View Task Management</strong> — Kanban boards, Gantt charts, and calendar views</li>
+                <li>✅ <strong>Approval-Based Submission</strong> — Deliverables review with Excel payroll and performance reports</li>
               </ul>
             </div>
             <div>
-              <p style="font-size:0.78rem;color:var(--cyan);font-family:'DM Mono',monospace;letter-spacing:0.08em;margin-bottom:0.6rem;">ADVANCED CAPABILITIES</p>
+              <p style="font-size:0.78rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;margin-bottom:0.6rem;">ADVANCED CAPABILITIES</p>
               <ul class="project-feature-list">
-                <li>💬 <strong>Real-Time Chat Collaboration</strong> — Built-in messaging between Project Managers and team members — no third-party tools required</li>
-                <li>🤖 <strong>AI Meeting Assistant</strong> — Transcribes meetings, summarizes group discussions, and automatically logs decisions, updates, and bottlenecks into the system</li>
-                <li>📊 <strong>Automated Reporting & Analytics</strong> — Real-time dashboards with performance metrics, progress tracking, risk detection, and AI-based recommendations</li>
-                <li>🔔 <strong>Smart Notifications</strong> — Instant alerts on task assignments, approvals, project changes, and deadlines</li>
-                <li>🛡️ <strong>Enterprise-Grade Security</strong> — Encrypted APIs, role-based access control, regular backups, and server monitoring for zero downtime</li>
+                <li>💬 <strong>Real-Time Chat</strong> — Built-in messaging between PMs and team members</li>
+                <li>🤖 <strong>AI Meeting Assistant</strong> — Transcribes meetings and logs decisions automatically</li>
+                <li>📊 <strong>Automated Reporting</strong> — Real-time dashboards with AI-based recommendations</li>
+                <li>🔔 <strong>Smart Notifications</strong> — Instant alerts on assignments, approvals, and deadlines</li>
+                <li>🛡️ <strong>Enterprise Security</strong> — Encrypted APIs, RBAC, regular backups</li>
               </ul>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.75rem;">Complete SDLC documentation: SRS, UML design diagrams (Domain Model, Sequence, Collaboration, State Chart), 100+ test cases across 5 test design specs, and a full user technical manual.</p>
             </div>
           </div>
           <div class="project-stack">
@@ -423,6 +472,14 @@
 
       <!-- BOTFIZZ – Live Product Full Width -->
       <div class="project-card featured reveal reveal-delay-1" style="grid-column: span 2;">
+        <!-- Project Image -->
+        <div class="project-image">
+          <img src="images/botfizz-preview.png" alt="BotFizz — No-Code AI Chatbot Builder" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">💬</span>
+            <span class="pip-text">Add project screenshot<br><code>images/botfizz-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon orange">💬</div>
           <div style="display:flex;gap:0.5rem;align-items:center;">
@@ -436,23 +493,22 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
             <div>
               <h3 class="project-title">BotFizz — No-Code AI Chatbot Builder</h3>
-              <p class="project-desc">A web-based SaaS platform that democratizes intelligent conversational automation for small and medium businesses. BotFizz allows users <em>without any programming expertise</em> to design, train, and deploy AI-powered chatbots across multiple messaging channels — eliminating the technical and financial barriers typically associated with chatbot development.</p>
-              <p class="project-desc" style="margin-top:0.75rem;">The platform features a <strong style="color:var(--text)">visual drag-and-drop flow builder</strong>, allowing non-technical users to construct complete conversation trees, define branching logic, and configure automated responses through an intuitive graphical dashboard.</p>
+              <p class="project-desc">A web-based SaaS platform that democratizes intelligent conversational automation for SMBs. BotFizz allows users <em>without any programming expertise</em> to design, train, and deploy AI-powered chatbots across multiple messaging channels.</p>
+              <p class="project-desc" style="margin-top:0.75rem;">The platform features a <strong style="color:var(--text)">visual drag-and-drop flow builder</strong>, allowing non-technical users to construct conversation trees, define branching logic, and configure automated responses.</p>
             </div>
             <div>
               <p class="project-desc" style="margin-bottom:0.75rem;"><strong style="color:var(--text)">Core capabilities:</strong></p>
               <ul class="project-feature-list">
-                <li>🧠 <strong>AI Intent Recognition</strong> — Integrated with external NLP/AI APIs (OpenAI) to understand user intent and deliver context-aware responses</li>
-                <li>📲 <strong>Multi-Platform Deployment</strong> — Connects to WhatsApp Business Cloud API, Instagram Messaging API, and an embeddable website widget via script injection</li>
-                <li>📊 <strong>Real-Time Analytics Dashboard</strong> — Conversation monitoring, session logs, and engagement metrics in a unified dashboard</li>
-                <li>🔒 <strong>User Authentication & Multi-User Support</strong> — Secure login with role-based access for team collaboration</li>
-                <li>📁 <strong>Custom AI Training</strong> — Upload domain-specific data to fine-tune chatbot responses for business use cases</li>
-                <li>🌐 <strong>Multi-Language Support</strong> — Designed to serve diverse regional and global audiences</li>
+                <li>🧠 <strong>AI Intent Recognition</strong> — OpenAI-integrated NLP for context-aware responses</li>
+                <li>📲 <strong>Multi-Platform Deployment</strong> — WhatsApp, Instagram, and embeddable web widget</li>
+                <li>📊 <strong>Real-Time Analytics Dashboard</strong> — Conversation monitoring and engagement metrics</li>
+                <li>🔒 <strong>Role-Based Auth</strong> — Secure login with team collaboration support</li>
+                <li>📁 <strong>Custom AI Training</strong> — Upload domain-specific data to fine-tune chatbot</li>
+                <li>🌐 <strong>Multi-Language Support</strong> — Global and regional audience reach</li>
               </ul>
-              <p class="project-desc" style="margin-top:0.75rem;">Live at <a href="https://botfizz.com" target="_blank" rel="noopener" style="color:var(--cyan);text-decoration:underline;">botfizz.com</a> — built with full SDLC coverage including SRS, UML diagrams, 100+ test cases, and a user technical manual.</p>
             </div>
           </div>
-          <div class="project-stack">
+          <div class="project-stack" style="margin-top:1.25rem;">
             <span class="stack-tag">React.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">Express.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">NLP/AI APIs</span><span class="stack-tag">WhatsApp API</span><span class="stack-tag">Instagram API</span><span class="stack-tag">Docker</span><span class="stack-tag">VPS (DigitalOcean)</span>
           </div>
         </div>
@@ -460,15 +516,22 @@
 
       <!-- AI Short-Form Video Generator -->
       <div class="project-card reveal reveal-delay-2">
+        <div class="project-image">
+          <img src="images/video-gen-preview.png" alt="AI Short-Form Video Generator" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">🎬</span>
+            <span class="pip-text">Add screenshot<br><code>images/video-gen-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon cyan">🎬</div>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
         <div class="project-body">
           <h3 class="project-title">AI Short-Form Video Generator</h3>
-          <p class="project-desc">A Python-based pipeline that automatically converts long-form video content into optimized short-form clips for social media. Leverages AI transcription models and speech-to-text APIs to extract captions, identify highlight moments, and generate platform-ready vertical clips — all through a modular, scalable backend architecture.</p>
+          <p class="project-desc">A Python-based pipeline that automatically converts long-form video content into optimized short-form clips for social media. Leverages AI transcription models and speech-to-text APIs to extract captions, identify highlights, and generate platform-ready vertical clips.</p>
           <ul class="project-feature-list" style="margin-top:0.75rem;">
             <li>⚡ Automated long-form to short-form video conversion</li>
             <li>🗣️ Integrated transcription and dynamic caption generation</li>
@@ -483,15 +546,22 @@
 
       <!-- QuizMaster Android App -->
       <div class="project-card reveal">
+        <div class="project-image">
+          <img src="images/quizmaster-preview.png" alt="QuizMaster Android App" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">📱</span>
+            <span class="pip-text">Add screenshot<br><code>images/quizmaster-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon orange">📱</div>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
         <div class="project-body">
           <h3 class="project-title">QuizMaster — Android Quiz App</h3>
-          <p class="project-desc">A feature-rich Android quiz application built with Kotlin and XML demonstrating modern Android development practices. Fetches questions dynamically from the OpenTDB API via Retrofit2, handles async operations with Kotlin Coroutines, and loads images with Glide. Implements MVC architecture with a graceful fallback to static questions if the API fails.</p>
+          <p class="project-desc">A feature-rich Android quiz application built with Kotlin demonstrating modern Android development practices. Fetches questions dynamically from the OpenTDB API via Retrofit2, handles async operations with Kotlin Coroutines, and loads images with Glide. Implements MVC architecture.</p>
           <ul class="project-feature-list" style="margin-top:0.6rem;">
             <li>🔌 Live API integration with OpenTDB for dynamic quiz content</li>
             <li>🧭 Multi-activity navigation (quiz screen → results screen)</li>
@@ -506,15 +576,22 @@
 
       <!-- Cinema Management System -->
       <div class="project-card reveal reveal-delay-1">
+        <div class="project-image">
+          <img src="images/cinema-preview.png" alt="Cinema Management System" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">🎦</span>
+            <span class="pip-text">Add screenshot<br><code>images/cinema-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon cyan">🎦</div>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
         <div class="project-body">
           <h3 class="project-title">Cinema Management System</h3>
-          <p class="project-desc">A DSA academic project applying advanced data structures to a real cinema booking scenario. Implements dynamic arrays for seat storage, hash tables for O(1) show lookups, queues for booking workflows, and a greedy algorithm for optimal seat allocation — all from scratch without relying on high-level ORM abstractions.</p>
+          <p class="project-desc">A DSA academic project applying advanced data structures to a real cinema booking scenario. Implements dynamic arrays for seat storage, hash tables for O(1) show lookups, queues for booking workflows, and a greedy algorithm for optimal seat allocation — all from scratch.</p>
           <div class="project-stack">
             <span class="stack-tag">Java</span><span class="stack-tag">Dynamic Arrays</span><span class="stack-tag">Hash Tables</span><span class="stack-tag">Queues</span><span class="stack-tag">Greedy Algorithms</span>
           </div>
@@ -523,15 +600,22 @@
 
       <!-- Inventory Management System -->
       <div class="project-card reveal reveal-delay-2">
+        <div class="project-image">
+          <img src="images/inventory-preview.png" alt="Inventory Management System" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">🛒</span>
+            <span class="pip-text">Add screenshot<br><code>images/inventory-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon orange">🛒</div>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
         <div class="project-body">
           <h3 class="project-title">Inventory Management System</h3>
-          <p class="project-desc">A web-based inventory dashboard with full CRUD operations built using PHP + XAMPP + MySQL. Features secure user authentication, session management, and a clean admin interface for tracking product stock levels, managing suppliers, and generating inventory reports with real-time database integration.</p>
+          <p class="project-desc">A web-based inventory dashboard with full CRUD operations built using PHP + XAMPP + MySQL. Features secure user authentication, session management, and a clean admin interface for tracking product stock levels, managing suppliers, and generating inventory reports.</p>
           <div class="project-stack">
             <span class="stack-tag">PHP</span><span class="stack-tag">MySQL</span><span class="stack-tag">XAMPP</span><span class="stack-tag">CRUD</span><span class="stack-tag">User Auth</span>
           </div>
@@ -540,15 +624,22 @@
 
       <!-- Retail Management System -->
       <div class="project-card reveal">
+        <div class="project-image">
+          <img src="images/retail-preview.png" alt="Retail Management System" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">🏪</span>
+            <span class="pip-text">Add screenshot<br><code>images/retail-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon cyan">🏪</div>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
         <div class="project-body">
           <h3 class="project-title">Retail Management System (Big Bazaar)</h3>
-          <p class="project-desc">A full-featured desktop retail application built with Python and Tkinter, featuring a role-split architecture: separate Admin and Employee modes launched from a central hub. Admin handles employee management, inventory control (add/update/delete products with stock, MRP, cost price, vendor info), and invoice records. Employee module handles billing, cart management, and real-time stock updates with a live clock and auto bill-number generation.</p>
+          <p class="project-desc">A full-featured desktop retail application built with Python and Tkinter, featuring a role-split architecture: separate Admin and Employee modes. Admin handles employee management, inventory control, and invoice records. Employee module handles billing, cart management, and real-time stock updates.</p>
           <ul class="project-feature-list" style="margin-top:0.6rem;">
             <li>🔐 Dual login system (Admin/Employee) backed by SQLite</li>
             <li>🛒 Cart management with dynamic billing and invoice generation</li>
@@ -563,15 +654,22 @@
 
       <!-- Mini LMS -->
       <div class="project-card reveal reveal-delay-1">
+        <div class="project-image">
+          <img src="images/lms-preview.png" alt="Mini LMS" onerror="this.parentElement.classList.add('no-img')">
+          <div class="project-image-placeholder">
+            <span class="pip-icon">📚</span>
+            <span class="pip-text">Add screenshot<br><code>images/lms-preview.png</code></span>
+          </div>
+        </div>
         <div class="project-header">
           <div class="project-icon orange">📚</div>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
         <div class="project-body">
           <h3 class="project-title">Mini LMS — Learning Management System</h3>
-          <p class="project-desc">A full-featured web LMS built with ASP.NET Core MVC using a Code-First approach with Entity Framework Core. Implements four role-specific controllers: Admin (user & course management), Student (dashboard, quiz attempts, profile), Teacher (quiz creation, grading), and Account (login/register/forgot password). Employs both conventional and attribute routing, server-side DataAnnotations validation, and jQuery client-side validation.</p>
+          <p class="project-desc">A full-featured web LMS built with ASP.NET Core MVC using a Code-First approach with Entity Framework Core. Implements four role-specific controllers: Admin, Student, Teacher, and Account. Employs both conventional and attribute routing, server-side DataAnnotations validation, and jQuery client-side validation.</p>
           <ul class="project-feature-list" style="margin-top:0.6rem;">
             <li>👥 Multi-role system: Admin, Teacher, Student with separate dashboards</li>
             <li>📝 Quiz management: teachers create quizzes, students attempt, teachers grade</li>
@@ -600,29 +698,29 @@
           <a href="mailto:huzaifamuqeet2@gmail.com" class="contact-item">
             <div class="contact-item-icon">✉️</div>
             <div>
-              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'DM Mono',monospace;margin-bottom:2px;">EMAIL</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:2px;">EMAIL</div>
               <div>huzaifamuqeet2@gmail.com</div>
             </div>
           </a>
           <a href="tel:+923117675513" class="contact-item">
             <div class="contact-item-icon">📱</div>
             <div>
-              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'DM Mono',monospace;margin-bottom:2px;">PHONE</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:2px;">PHONE</div>
               <div>+92 311 7675513</div>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/huzaifa-muqeet" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-item-icon">💼</div>
             <div>
-              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'DM Mono',monospace;margin-bottom:2px;">LINKEDIN</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:2px;">LINKEDIN</div>
               <div>linkedin.com/in/huzaifa-muqeet</div>
             </div>
           </a>
-          <a href="https://github.com/huzaifa-4" target="_blank" rel="noopener" class="contact-item">
+          <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-item-icon">🐙</div>
             <div>
-              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'DM Mono',monospace;margin-bottom:2px;">GITHUB</div>
-              <div>github.com/huzaifa-4</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:2px;">GITHUB</div>
+              <div>github.com/huzaifamuqeet</div>
             </div>
           </a>
         </div>
@@ -649,7 +747,7 @@
             <textarea id="fmsg" placeholder="Tell me about your project..." required></textarea>
           </div>
           <button type="submit" class="form-submit" id="fsubmit">Send Message →</button>
-          <p id="form-success" style="display:none;color:var(--cyan);font-family:'DM Mono',monospace;font-size:0.8rem;margin-top:0.5rem;">✓ Message prepared! Opening your mail client...</p>
+          <p id="form-success" style="display:none;color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:0.8rem;margin-top:0.5rem;">✓ Message prepared! Opening your mail client...</p>
         </form>
       </div>
     </div>
@@ -664,6 +762,9 @@
   </div>
 </footer>
 
+<!-- Vanta.js NET effect -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
