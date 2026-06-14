@@ -146,6 +146,16 @@ nav .nav-inner {
   display: flex; align-items: center; gap: 0.5rem;
   letter-spacing: -0.02em;
 }
+/* Logo image styling */
+.nav-logo img {
+  display: block;
+  height: 70px;        /* Adjust to match your nav height */
+  width: auto;         /* Maintains aspect ratio */
+  max-width: 120px;    /* Prevents oversizing */
+  object-fit: contain; /* Keeps proportions if image is distorted */
+  transition: all 0.2s ease;
+}
+
 .nav-logo span {
   display: inline-flex; background: var(--cyan);
   color: var(--bg); width: 28px; height: 28px;
