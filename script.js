@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
       minHeight: 200,
       minWidth: 200,
       scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x00d4ff,
+      scaleMobile: 0.75,
+      color: 0x00aacc,        /* slightly dimmer cyan */
       backgroundColor: 0x060912,
-      points: 9.0,
-      maxDistance: 22.0,
-      spacing: 17.0,
+      points: 7.0,            /* fewer nodes = less clutter */
+      maxDistance: 20.0,
+      spacing: 20.0,
       showDots: true,
     });
   }
