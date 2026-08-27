@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Huzaifa Muqeet — Software Engineer & AI Developer. Building practical software and AI-powered solutions that turn real problems into usable products." />
+    <meta property="og:title" content="Huzaifa Muqeet — Software Engineer & AI Developer" />
+    <meta property="og:description" content="I build practical software and AI-powered solutions that turn real problems into usable products." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#060912" />
+    <link rel="icon" href="images/favicon_1.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Huzaifa Muqeet",
+            "jobTitle": "Software Engineer and AI Developer",
+            "sameAs": [
+                "https://github.com/huzaifamuqeet",
+                "https://www.linkedin.com/in/huzaifa-muqeet"
+            ]
+        }
+    </script>
+    <title>Huzaifa Muqeet — Software Engineer &amp; AI Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Three.js & Vanta -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js">
+    </script>
+
+        <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <a class="skip-link" href="#hero">Skip to content</a>
+
+    <!-- ═══════════════════════════════════════════════════
+    VANTA BG
+    ═══════════════════════════════════════════════════ -->
+    <div id="vanta-bg"></div>
+
+    <!-- ═══════════════════════════════════════════════════
+    NAV
+    ═══════════════════════════════════════════════════ -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Home">
+                <img src="images/logo/logo.png" alt="Huzaifa Muqeet" onerror="this.onerror=null;this.src='images/favicon_1.svg';" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">about</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#projects">work</a></li>
+                <li><a href="#contact" class="nav-cta">Let's Work Together</a></li>
+            </ul>
+            <button class="ham" id="ham" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="#about">./about</a>
+        <a href="#skills">./skills</a>
+        <a href="#experience">./experience</a>
+        <a href="#projects">./work</a>
+        <a href="#contact">./contact</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+    SOCIAL BAR — fixed
+    ═══════════════════════════════════════════════════ -->
+    <div class="social-bar">
+        <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="social-link" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/huzaifa-muqeet" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://botfizz.com" target="_blank" rel="noopener" class="social-link" title="BotFizz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </a>
+    </div>
+
+    <div class="email-bar">
+        <a href="mailto:huzaifamuqeet2@gmail.com" class="email-vert">huzaifamuqeet2@gmail.com</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+    HERO
+    ═══════════════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-grid">
+
+                <div class="hero-left reveal">
+                    <div class="hero-badge">Available for opportunities</div>
+                    <h1 class="hero-name">
+                        Hello, I'm<br />
+                        <span class="accent">Huzaifa</span> <span class="accent-2">Muqeet</span>
+                    </h1>
+                    <p class="hero-role">Software Engineer <span>·</span> AI Developer</p>
+                    <div class="hero-typewriter" id="typewriter">
+                        <span class="cursor">|</span>
+                    </div>
+                    <p class="hero-claim">
+                        I build practical software and AI-powered solutions that turn real problems into usable products — from AI-integrated SaaS platforms to production web applications.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">View My Work →</a>
+                        <a href="#contact" class="btn-secondary">Let's Work Together</a>
+                        <a href="mailto:huzaifamuqeet2@gmail.com?subject=CV%20Request" class="btn-secondary btn-cv">Request CV</a>
+                    </div>
+                    <div class="hero-proof"><span></span> Available for full-time, freelance, and collaborative work</div>
+                    <div class="hero-profile-links">
+                        <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/huzaifa-muqeet" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="stat-num">7+</div>
+                            <div class="stat-label">COMPANIES</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div>
+                            <div class="stat-num">12+</div>
+                            <div class="stat-label">PROJECTS</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div>
+                            <div class="stat-num">2+</div>
+                            <div class="stat-label">YEARS EXP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal reveal-d2">
+                    <!-- SVG Illustration – clean developer at desk -->
+                    <svg viewBox="0 0 460 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Developer at workstation">
+                        <defs>
+                            <radialGradient id="deskGlow" cx="50%" cy="60%" r="55%">
+                                <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.10"/>
+                                <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+                            </radialGradient>
+                            <radialGradient id="screenGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#7C6FF7" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="#7C6FF7" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="monitorGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#1A2240"/>
+                                <stop offset="100%" stop-color="#0D1529"/>
+                            </linearGradient>
+                            <linearGradient id="deskGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#1E2B4A"/>
+                                <stop offset="100%" stop-color="#141E38"/>
+                            </linearGradient>
+                            <linearGradient id="chairGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#1A2540"/>
+                                <stop offset="100%" stop-color="#111C33"/>
+                            </linearGradient>
+                            <linearGradient id="screenContent" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#0B1025"/>
+                                <stop offset="100%" stop-color="#0D1420"/>
+                            </linearGradient>
+                            <linearGradient id="scanlines" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="transparent"/>
+                                <stop offset="50%" stop-color="rgba(0,0,0,0.03)"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </linearGradient>
+                        </defs>
+
+                        <ellipse cx="230" cy="300" rx="200" ry="150" fill="url(#deskGlow)"/>
+                        <ellipse cx="230" cy="430" rx="145" ry="18" fill="rgba(0,212,255,0.04)"/>
+
+                        <rect x="168" y="275" width="94" height="95" rx="14" fill="url(#chairGrad)" stroke="rgba(0,212,255,0.10)" stroke-width="1"/>
+                        <line x1="182" y1="295" x2="182" y2="355" stroke="rgba(0,212,255,0.06)" stroke-width="1"/>
+                        <line x1="248" y1="295" x2="248" y2="355" stroke="rgba(0,212,255,0.06)" stroke-width="1"/>
+
+                        <rect x="90" y="330" width="280" height="18" rx="5" fill="url(#deskGrad)" stroke="rgba(0,212,255,0.12)" stroke-width="1"/>
+                        <rect x="90" y="330" width="280" height="3" rx="2" fill="rgba(0,212,255,0.06)"/>
+                        <rect x="105" y="348" width="12" height="72" rx="3" fill="#111C33"/>
+                        <rect x="343" y="348" width="12" height="72" rx="3" fill="#111C33"/>
+                        <rect x="98" y="416" width="26" height="6" rx="3" fill="#0D1529"/>
+                        <rect x="336" y="416" width="26" height="6" rx="3" fill="#0D1529"/>
+
+                        <rect x="216" y="300" width="28" height="34" rx="3" fill="#111C33" stroke="rgba(0,212,255,0.06)" stroke-width="1"/>
+                        <rect x="200" y="328" width="60" height="8" rx="4" fill="#0D1529" stroke="rgba(0,212,255,0.06)" stroke-width="1"/>
+
+                        <rect x="118" y="140" width="224" height="162" rx="10" fill="#0A0F1E" stroke="rgba(0,212,255,0.20)" stroke-width="1.5"/>
+                        <rect x="124" y="146" width="212" height="150" rx="7" fill="url(#monitorGrad)"/>
+                        <rect x="124" y="146" width="212" height="150" rx="7" fill="url(#screenGlow)"/>
+
+                        <rect x="124" y="146" width="212" height="150" rx="7" fill="url(#screenContent)"/>
+                        <rect x="124" y="146" width="212" height="20" rx="7" fill="rgba(255,255,255,0.03)"/>
+                        <rect x="124" y="157" width="212" height="9" fill="rgba(255,255,255,0.03)"/>
+                        <circle cx="137" cy="156" r="3.5" fill="#FF5F57"/>
+                        <circle cx="148" cy="156" r="3.5" fill="#FEBC2E"/>
+                        <circle cx="159" cy="156" r="3.5" fill="#28C840"/>
+                        <rect x="172" y="149" width="46" height="14" rx="3" fill="rgba(0,212,255,0.06)" stroke="rgba(0,212,255,0.12)" stroke-width="0.5"/>
+                        <text x="195" y="159" fill="rgba(0,212,255,0.5)" font-size="7" text-anchor="middle" font-family="monospace">app.tsx</text>
+
+                        <rect x="132" y="174" width="8" height="5" rx="1" fill="rgba(124,111,247,0.5)"/>
+                        <rect x="143" y="174" width="28" height="5" rx="1" fill="rgba(255,255,255,0.10)"/>
+                        <rect x="174" y="174" width="10" height="5" rx="1" fill="rgba(0,212,255,0.35)"/>
+                        <rect x="132" y="184" width="12" height="5" rx="1" fill="rgba(124,111,247,0.5)"/>
+                        <rect x="147" y="184" width="22" height="5" rx="1" fill="rgba(255,200,100,0.4)"/>
+                        <rect x="172" y="184" width="5" height="5" rx="1" fill="rgba(255,255,255,0.12)"/>
+                        <rect x="180" y="184" width="38" height="5" rx="1" fill="rgba(0,212,255,0.25)"/>
+                        <rect x="139" y="194" width="8" height="5" rx="1" fill="rgba(124,111,247,0.5)"/>
+                        <rect x="150" y="194" width="50" height="5" rx="1" fill="rgba(255,120,100,0.35)"/>
+                        <rect x="203" y="194" width="8" height="5" rx="1" fill="rgba(255,255,255,0.10)"/>
+                        <rect x="147" y="204" width="16" height="5" rx="1" fill="rgba(0,212,255,0.30)"/>
+                        <rect x="166" y="204" width="34" height="5" rx="1" fill="rgba(255,255,255,0.08)"/>
+                        <rect x="203" y="204" width="22" height="5" rx="1" fill="rgba(0,212,255,0.18)"/>
+                        <rect x="147" y="214" width="42" height="5" rx="1" fill="rgba(255,200,80,0.30)"/>
+                        <rect x="132" y="224" width="18" height="5" rx="1" fill="rgba(124,111,247,0.35)"/>
+                        <rect x="153" y="224" width="3" height="5" rx="1" fill="rgba(0,212,255,0.7)"/>
+                        <rect x="132" y="234" width="6" height="5" rx="1" fill="rgba(255,255,255,0.10)"/>
+                        <rect x="141" y="234" width="28" height="5" rx="1" fill="rgba(255,120,80,0.25)"/>
+                        <rect x="124" y="289" width="212" height="7" rx="0" fill="rgba(124,111,247,0.08)"/>
+                        <rect x="128" y="291" width="30" height="3" rx="1" fill="rgba(124,111,247,0.25)"/>
+                        <rect x="296" y="291" width="20" height="3" rx="1" fill="rgba(0,212,255,0.20)"/>
+                        <rect x="320" y="291" width="12" height="3" rx="1" fill="rgba(0,212,255,0.12)"/>
+
+                        <rect x="196" y="255" width="68" height="76" rx="16" fill="#2A3A6E"/>
+                        <path d="M218 295 Q230 305 242 295" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M218 255 Q230 266 242 255" fill="#1E2D58"/>
+                        <rect x="146" y="262" width="56" height="22" rx="10" fill="#2A3A6E" transform="rotate(-18 174 273)"/>
+                        <rect x="135" y="252" width="22" height="18" rx="8" fill="#C68642" transform="rotate(-18 146 261)"/>
+                        <rect x="130" y="253" width="8" height="5" rx="3" fill="#B07335" transform="rotate(-18 134 255)"/>
+                        <rect x="130" y="260" width="8" height="5" rx="3" fill="#B07335" transform="rotate(-18 134 262)"/>
+                        <rect x="258" y="275" width="50" height="20" rx="10" fill="#2A3A6E" transform="rotate(12 283 285)"/>
+                        <rect x="300" y="278" width="22" height="16" rx="7" fill="#C68642" transform="rotate(12 311 286)"/>
+                        <rect x="222" y="243" width="16" height="18" rx="5" fill="#C68642"/>
+
+                        <ellipse cx="230" cy="233" rx="26" ry="26" fill="#C68642"/>
+                        <path d="M204 222 Q206 198 230 196 Q254 198 256 222 Q244 212 230 213 Q216 212 204 222Z" fill="#1A1A2E"/>
+                        <ellipse cx="204" cy="234" rx="5" ry="7" fill="#B87840"/>
+                        <ellipse cx="222" cy="233" rx="3.5" ry="3.5" fill="#1A1A2E"/>
+                        <ellipse cx="238" cy="233" rx="3.5" ry="3.5" fill="#1A1A2E"/>
+                        <circle cx="223" cy="232" r="1.2" fill="white"/>
+                        <circle cx="239" cy="232" r="1.2" fill="white"/>
+                        <path d="M224 242 Q230 247 236 242" stroke="#8B5E3C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <rect x="215" y="229" width="14" height="9" rx="4" fill="none" stroke="rgba(0,212,255,0.4)" stroke-width="1.2"/>
+                        <rect x="231" y="229" width="14" height="9" rx="4" fill="none" stroke="rgba(0,212,255,0.4)" stroke-width="1.2"/>
+                        <line x1="229" y1="233" x2="231" y2="233" stroke="rgba(0,212,255,0.4)" stroke-width="1.2"/>
+                        <line x1="204" y1="233" x2="215" y2="233" stroke="rgba(0,212,255,0.4)" stroke-width="1.2"/>
+                        <line x1="245" y1="233" x2="256" y2="233" stroke="rgba(0,212,255,0.4)" stroke-width="1.2"/>
+
+                        <rect x="178" y="368" width="104" height="20" rx="8" fill="url(#chairGrad)" stroke="rgba(0,212,255,0.08)" stroke-width="1"/>
+                        <rect x="224" y="388" width="12" height="28" rx="3" fill="#0D1529"/>
+                        <ellipse cx="230" cy="420" rx="38" ry="8" fill="#0D1529" stroke="rgba(0,212,255,0.04)" stroke-width="1"/>
+
+                        <rect x="160" y="322" width="140" height="12" rx="4" fill="#131E35" stroke="rgba(0,212,255,0.12)" stroke-width="0.8"/>
+                        <rect x="165" y="324" width="130" height="3" rx="1" fill="rgba(255,255,255,0.03)"/>
+                        <rect x="165" y="329" width="130" height="3" rx="1" fill="rgba(255,255,255,0.02)"/>
+                        <rect x="167" y="324" width="6" height="3" rx="0.5" fill="rgba(0,212,255,0.10)"/>
+                        <rect x="175" y="324" width="6" height="3" rx="0.5" fill="rgba(0,212,255,0.06)"/>
+                        <rect x="183" y="324" width="6" height="3" rx="0.5" fill="rgba(0,212,255,0.08)"/>
+                        <rect x="241" y="324" width="6" height="3" rx="0.5" fill="rgba(124,111,247,0.12)"/>
+                        <rect x="277" y="324" width="8" height="3" rx="0.5" fill="rgba(0,212,255,0.06)"/>
+
+                        <ellipse cx="318" cy="328" rx="11" ry="14" fill="#131E35" stroke="rgba(0,212,255,0.10)" stroke-width="0.8"/>
+                        <line x1="318" y1="316" x2="318" y2="326" stroke="rgba(0,212,255,0.12)" stroke-width="0.8"/>
+
+                        <rect x="355" y="308" width="22" height="24" rx="4" fill="#131E35" stroke="rgba(255,107,53,0.20)" stroke-width="1"/>
+                        <path d="M377 316 Q388 316 388 322 Q388 328 377 328" stroke="rgba(255,107,53,0.20)" stroke-width="1" fill="none"/>
+                        <rect x="357" y="310" width="18" height="6" rx="2" fill="rgba(255,107,53,0.08)"/>
+
+                        <g>
+                            <rect x="22" y="148" width="72" height="26" rx="6" fill="#0D1529" stroke="rgba(97,218,251,0.25)" stroke-width="1"/>
+                            <circle cx="36" cy="161" r="5" fill="none" stroke="#61DAFB" stroke-width="1.2"/>
+                            <ellipse cx="36" cy="161" rx="5" ry="2.5" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(60 36 161)"/>
+                            <ellipse cx="36" cy="161" rx="5" ry="2.5" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(-60 36 161)"/>
+                            <circle cx="36" cy="161" r="1.5" fill="#61DAFB"/>
+                            <text x="46" y="158" fill="#61DAFB" font-size="7.5" font-family="monospace" font-weight="600">React</text>
+                            <text x="46" y="168" fill="rgba(97,218,251,0.35)" font-size="6" font-family="monospace">v18.3</text>
+                        </g>
+                        <g>
+                            <rect x="14" y="360" width="82" height="26" rx="6" fill="#0D1529" stroke="rgba(104,160,99,0.25)" stroke-width="1"/>
+                            <rect x="24" y="353" width="8" height="16" rx="1.5" fill="#68A063"/>
+                            <rect x="24" y="353" width="8" height="16" rx="1.5" fill="none" stroke="rgba(104,160,99,0.25)" stroke-width="0.5"/>
+                            <text x="37" y="370" fill="#68A063" font-size="7.5" font-family="monospace" font-weight="600">Node.js</text>
+                        </g>
+                        <g>
+                            <rect x="366" y="155" width="80" height="26" rx="6" fill="#0D1529" stroke="rgba(49,120,198,0.25)" stroke-width="1"/>
+                            <rect x="374" y="159" width="14" height="14" rx="2" fill="#3178C6"/>
+                            <text x="377" y="169" fill="white" font-size="7" font-family="monospace" font-weight="700">TS</text>
+                            <text x="392" y="165" fill="#3178C6" font-size="7.5" font-family="monospace" font-weight="600">TypeScript</text>
+                            <text x="392" y="175" fill="rgba(49,120,198,0.35)" font-size="6" font-family="monospace">v5.4</text>
+                        </g>
+                        <g>
+                            <rect x="372" y="290" width="74" height="26" rx="6" fill="#0D1529" stroke="rgba(255,107,53,0.25)" stroke-width="1"/>
+                            <text x="384" y="300" fill="#FF6B35" font-size="9">🤖</text>
+                            <text x="396" y="302" fill="#FF6B35" font-size="7.5" font-family="monospace" font-weight="600">AI / ML</text>
+                            <text x="396" y="312" fill="rgba(255,107,53,0.35)" font-size="6" font-family="monospace">OpenAI</text>
+                        </g>
+
+                        <rect x="124" y="146" width="212" height="150" rx="7" fill="url(#scanlines)" opacity="0.2"/>
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="hero-scroll">
+                <span>SCROLL</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    ABOUT
+    ═══════════════════════════════════════════════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <span class="section-tag">// 01. about</span>
+                    <h2 class="section-title">Engineer by logic,<br />creator by passion.</h2>
+                    <div class="section-line"></div>
+                    <p>
+                        I'm a <strong>Software Engineering student</strong> at the University of Gujrat with hands-on professional experience across <span class="highlight">full-stack development</span>, AI integration, and real-world SaaS products.
+                    </p>
+                    <p>
+                        Previously contributed to <strong>BotFizz.com</strong> — a live AI chatbot builder platform — and served as <strong>Web Developer at AA Empire Properties</strong> and <strong>Lead Manager at ICSDI Conference (Venture-Z)</strong>.
+                    </p>
+                    <p>
+                        I previously worked as an <strong>Associate Web Developer at Power Play Concepts</strong>, completed full-stack and AI/cloud internships at <strong>SPS Inc.</strong> and <strong>Friendsware Solutions</strong>, and built my flagship final year project <span class="highlight">Lyra</span> — an AI-powered project management system.
+                    </p>
+                    <div style="display:flex; gap:0.8rem; margin-top:1.2rem; flex-wrap:wrap;">
+                        <a href="mailto:huzaifamuqeet2@gmail.com" class="btn-secondary btn-sm">Email Me</a>
+                        <a href="https://www.linkedin.com/in/huzaifa-muqeet" target="_blank" rel="noopener" class="btn-secondary btn-sm">LinkedIn ↗</a>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-d2">
+                    <div class="terminal-card">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot r"></span>
+                            <span class="terminal-dot y"></span>
+                            <span class="terminal-dot g"></span>
+                            <span class="terminal-title">huzaifa@dev ~ profile.json</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div><span class="prompt">$ </span><span class="comment">cat profile.json</span></div>
+                            <div>&nbsp;</div>
+                            <div><span class="comment">{</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"name"</span><span class="comment">:</span> <span class="val">"Huzaifa Muqeet"</span><span class="comment">,</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"role"</span><span class="comment">:</span> <span class="val">"Full-Stack &amp; AI Developer"</span><span class="comment">,</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"location"</span><span class="comment">:</span> <span class="val">"Gujrat, Pakistan 🇵🇰"</span><span class="comment">,</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"education"</span><span class="comment">:</span> <span class="val">"BS SE @ UOG"</span><span class="comment">,</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"focus"</span><span class="comment">: [</span></div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"React"</span><span class="comment">,</span> <span class="val">"Node.js"</span><span class="comment">,</span> <span class="val">"AI/ML"</span></div>
+                            <div>&nbsp;&nbsp;<span class="comment">],</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"github"</span><span class="comment">:</span> <a href="https://github.com/huzaifamuqeet" target="_blank" class="link">"github.com/huzaifamuqeet"</a><span class="comment">,</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"status"</span><span class="comment">:</span> <span class="val">"open_to_work: true"</span></div>
+                            <div><span class="comment">}</span></div>
+                            <div>&nbsp;</div>
+                            <div><span class="prompt">$ </span><span class="comment">_</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    SKILLS
+    ═══════════════════════════════════════════════════ -->
+    <section id="skills">
+        <div class="container">
+            <span class="section-tag reveal">// 02. skills</span>
+            <h2 class="section-title reveal">Tech Stack</h2>
+            <div class="section-line reveal"></div>
+
+            <div class="skills-grid">
+                <div class="skill-group reveal">
+                    <div class="skill-group-title"><span class="icon">⚡</span> Languages</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag hot">JavaScript</span>
+                        <span class="skill-tag hot">PHP</span>
+                        <span class="skill-tag hot">Python</span>
+                        <span class="skill-tag hot">Java</span>
+                        <span class="skill-tag hot">Kotlin</span>
+                        <span class="skill-tag hot">C++</span>
+                        <span class="skill-tag hot">C#</span>
+                        <span class="skill-tag hot">SQL</span>
+                        <span class="skill-tag hot">TypeScript</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal reveal-d1">
+                    <div class="skill-group-title"><span class="icon">🎨</span> Frontend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag hot">React.js</span>
+                        <span class="skill-tag hot">Vue.js</span>
+                        <span class="skill-tag hot">Next.js</span>
+                        <span class="skill-tag hot">Tailwind CSS</span>
+                        <span class="skill-tag hot">HTML5</span>
+                        <span class="skill-tag hot">CSS3</span>
+                        <span class="skill-tag hot">Bootstrap</span>
+                        <span class="skill-tag hot">jQuery</span>
+                        <span class="skill-tag hot">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal reveal-d2">
+                    <div class="skill-group-title"><span class="icon">⚙️</span> Backend &amp; APIs</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag hot">Node.js</span>
+                        <span class="skill-tag hot">Express.js</span>
+                        <span class="skill-tag hot">REST APIs</span>
+                        <span class="skill-tag hot">MERN Stack</span>
+                        <span class="skill-tag hot">ASP.NET</span>
+                        <span class="skill-tag hot">JWT / OAuth</span>
+                        <span class="skill-tag hot">GraphQL</span>
+                        <span class="skill-tag hot">Retrofit2</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal reveal-d3">
+                    <div class="skill-group-title"><span class="icon">🗄️</span> Databases</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag hot">PostgreSQL</span>
+                        <span class="skill-tag hot">MySQL</span>
+                        <span class="skill-tag hot">MongoDB</span>
+                        <span class="skill-tag hot">SQLite</span>
+                        <span class="skill-tag hot">Database Design</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal reveal-d1">
+                    <div class="skill-group-title"><span class="icon">🤖</span> AI &amp; Cloud</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag hot">AI Integration</span>
+                        <span class="skill-tag hot">NLP / Chatbots</span>
+                        <span class="skill-tag hot">REST APIs</span>
+                        <span class="skill-tag hot">JWT Auth</span>
+                        <span class="skill-tag hot">CRUD Operations</span>
+                        <span class="skill-tag hot">AWS</span>
+                        <span class="skill-tag hot">Azure</span>
+                        <span class="skill-tag hot">PyTorch</span>
+                        <span class="skill-tag hot">TensorFlow</span>
+                        <span class="skill-tag hot">Prompt Engineering</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal reveal-d2">
+                    <div class="skill-group-title"><span class="icon">🛠️</span> Tools &amp; CMS</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag hot">Git / GitHub</span>
+                        <span class="skill-tag hot">WordPress</span>
+                        <span class="skill-tag hot">SEO</span>
+                        <span class="skill-tag hot">WooCommerce</span>
+                        <span class="skill-tag hot">CI/CD</span>
+                        <span class="skill-tag hot">Docker</span>
+                        <span class="skill-tag hot">Android Studio</span>
+                        <span class="skill-tag hot">XAMPP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    EXPERIENCE
+    ═══════════════════════════════════════════════════ -->
+    <section id="experience">
+        <div class="container">
+            <span class="section-tag reveal">// 03. experience</span>
+            <h2 class="section-title reveal">Work History</h2>
+            <div class="section-line reveal"></div>
+
+            <div class="exp-timeline">
+                <div class="exp-item reveal">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Backend AI Engineer - Intern</div>
+                            <div class="exp-company">FlyRank AI <span class="current-badge">CURRENT ROLE</span></div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Jul 2026 – Present · 2 mos</span>
+                            <span class="exp-type">Internship · Chicago, IL</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Currently interning at FlyRank AI as an AI intern, focusing on backend AI engineering, CRUD operations, authentication, authorization, API design, and AI-powered workflows.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">Backend Engineering</span>
+                        <span class="exp-tag">CRUD APIs</span>
+                        <span class="exp-tag">Authentication</span>
+                        <span class="exp-tag">Authorization</span>
+                        <span class="exp-tag">AI Integrations</span>
+                    </div>
+                    <div class="exp-terminal" aria-label="FlyRank AI backend workflow">
+                        <span class="prompt">flyrank@api:~$</span>
+                        <span class="command">ship --feature auth crud ai</span>
+                        <span class="cursor">_</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Web Developer</div>
+                            <div class="exp-company">AA Empire Properties</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Jan 2026 – Apr 2026 · 4 mos</span>
+                            <span class="exp-type">Islamabad, Pakistan</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Built and maintained responsive, SEO-optimized business websites using HTML, CSS, JavaScript, and React, including ongoing website optimization. Also managed the company Facebook page and produced graphic design assets for marketing materials.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">HTML / CSS</span>
+                        <span class="exp-tag">JavaScript</span>
+                        <span class="exp-tag">React</span>
+                        <span class="exp-tag">SEO</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal reveal-d1">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Associate Web Developer</div>
+                            <div class="exp-company">Power Play Concepts Pvt. Ltd.</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Jun 2025 – Nov 2025 · 6 mos</span>
+                            <span class="exp-type">Islamabad, Pakistan</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Designed, developed, and maintained responsive websites using modern web technologies including PHP, Vue.js, JavaScript, and CMS platforms like WordPress/WooCommerce. Managed full-stack web functionalities including UI/UX improvements, plugin integrations, SEO optimizations, and performance enhancements.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">PHP</span>
+                        <span class="exp-tag">Vue.js</span>
+                        <span class="exp-tag">WordPress</span>
+                        <span class="exp-tag">WooCommerce</span>
+                        <span class="exp-tag">SEO</span>
+                        <span class="exp-tag">UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal reveal-d1">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Lead Manager &amp; QA Engineer</div>
+                            <div class="exp-company">ICSDI Conference</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Jan 2026 – Feb 2026 · 2 mos</span>
+                            <span class="exp-type">Riyadh, Saudi Arabia</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Led management and quality assurance activities for the 3rd International Conference on Sustainability: Developments and Innovations (ICSDI) 2026 under Venture-Z.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">Lead Management</span>
+                        <span class="exp-tag">QA Engineering</span>
+                        <span class="exp-tag">Event Operations</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal reveal-d2">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Intern</div>
+                            <div class="exp-company">Software Productivity Strategists, Inc. (SPS)</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Jul 2025 – Sep 2025 · 3 mos</span>
+                            <span class="exp-type">Internship · Remote</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Developed full-stack web applications using the MERN stack, implementing scalable and responsive solutions. Worked on cloud-based solutions leveraging AWS and Azure. Applied AI and machine learning techniques to automate workflows and enhance data-driven decision-making.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">MERN</span>
+                        <span class="exp-tag">AWS</span>
+                        <span class="exp-tag">Azure</span>
+                        <span class="exp-tag">AI/ML</span>
+                        <span class="exp-tag">CI/CD</span>
+                        <span class="exp-tag">Agile</span>
+                        <span class="exp-tag">DevOps</span>
+                        <span class="exp-tag">Gen AI</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal reveal-d3">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Intern</div>
+                            <div class="exp-company">Friendsware Solutions</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Jul 2025 – Aug 2025 · 2 mos</span>
+                            <span class="exp-type">Internship · Islamabad, Pakistan</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Developed a Student Management System using ASP.NET, contributing to both frontend and backend modules. Gained hands-on experience in database integration, user interface design, and implementation of core functionalities including student registration, attendance tracking, and performance monitoring.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">ASP.NET</span>
+                        <span class="exp-tag">ASP.NET MVC</span>
+                        <span class="exp-tag">C#</span>
+                        <span class="exp-tag">SQL Server</span>
+                        <span class="exp-tag">UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal reveal-d1">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Contributor</div>
+                            <div class="exp-company">BotFizz.com</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Nov 2025 – Apr 2026 · 6 mos</span>
+                            <span class="exp-type">AI Chatbot SaaS</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Validated chatbot deployment flows and AI intent-recognition accuracy across WhatsApp, Instagram, and web channels on a production no-code chatbot builder. Fed structured feature-testing and onboarding-flow feedback into the core engineering team.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">React</span>
+                        <span class="exp-tag">Node.js</span>
+                        <span class="exp-tag">AI/NLP</span>
+                        <span class="exp-tag">SaaS</span>
+                        <span class="exp-tag">QA</span>
+                    </div>
+                </div>
+
+                <div class="exp-item reveal reveal-d2">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Assistant Database Administrator</div>
+                            <div class="exp-company">State Life Insurance Corporation</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                            <span class="exp-date">Mar 2024 – May 2024 · 3 mos</span>
+                            <span class="exp-type">Internship · On-site · Gujrat</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Performed database management tasks and assisted with office administration, clerical duties, and data entry. Handled customer inquiries and provided support. Organized and maintained filing systems and coordinated with team members.</p>
+                    <div class="exp-tags">
+                        <span class="exp-tag">Database Management</span>
+                        <span class="exp-tag">Data Entry</span>
+                        <span class="exp-tag">Administration</span>
+                        <span class="exp-tag">Customer Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    PROJECTS
+    ═══════════════════════════════════════════════════ -->
+    <section id="projects">
+        <div class="container">
+            <span class="section-tag reveal">// 04. work</span>
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="section-line reveal"></div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    CONTACT
+    ═══════════════════════════════════════════════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-text reveal">
+                    <span class="section-tag">// 05. contact</span>
+                    <h2>Let's work together.</h2>
+                    <div class="availability"><span></span> Currently accepting new opportunities</div>
+                    <p>
+                        Available for full-time roles, freelance projects, and collaboration.
+                        Whether you need a web app, an AI-integrated product, or a WordPress site — let's talk.
+                    </p>
+                    <div class="contact-items">
+                        <a href="mailto:huzaifamuqeet2@gmail.com" class="contact-item">
+                            <span class="icon">✉️</span>
+                            <div>
+                                <div class="label">Email</div>
+                                <div class="value">huzaifamuqeet2@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="tel:+923117675513" class="contact-item">
+                            <span class="icon">📱</span>
+                            <div>
+                                <div class="label">Phone</div>
+                                <div class="value">+92 311 7675513</div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/huzaifa-muqeet" target="_blank" rel="noopener" class="contact-item">
+                            <span class="icon">💼</span>
+                            <div>
+                                <div class="label">LinkedIn</div>
+                                <div class="value">linkedin.com/in/huzaifa-muqeet</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/huzaifamuqeet" target="_blank" rel="noopener" class="contact-item">
+                            <span class="icon">🐙</span>
+                            <div>
+                                <div class="label">GitHub</div>
+                                <div class="value">github.com/huzaifamuqeet</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-d2">
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="row">
+                            <div class="group">
+                                <label for="cfName">Name</label>
+                                <input type="text" id="cfName" placeholder="Your name" required />
+                            </div>
+                            <div class="group">
+                                <label for="cfEmail">Email</label>
+                                <input type="email" id="cfEmail" placeholder="your@email.com" required />
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label for="cfSubject">Subject</label>
+                            <input type="text" id="cfSubject" placeholder="What's this about?" />
+                        </div>
+                        <div class="group">
+                            <label for="cfMsg">Message</label>
+                            <textarea id="cfMsg" placeholder="Tell me about your project…" required></textarea>
+                        </div>
+                        <div class="submit-wrap">
+                            <button type="submit" class="btn-primary" id="cfSubmit">Send Message →</button>
+                            <span class="success" id="cfSuccess">✓ Message prepared! Opening your mail client…</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    FOOTER
+    ═══════════════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <div class="footer-cta">Have a backend or AI problem to solve? <a href="#contact">Let's talk ↗</a></div>
+            <p>Designed &amp; built by <span>Huzaifa Muqeet</span> · 2026 · Gujrat, Pakistan 🇵🇰</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+    SCRIPTS
+    ═══════════════════════════════════════════════════ -->
+        <script src="script.js"></script>
+
+</body>
+</html>
