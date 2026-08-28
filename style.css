@@ -1240,6 +1240,35 @@
         }
 
         /* ═══════════════════════════════════════════════════
+           NOTES & CAPSTONE
+           ═══════════════════════════════════════════════════ */
+        .notes-panel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.4rem 1.6rem;
+            border: 1px solid var(--border);
+            border-left: 2px solid var(--accent);
+            background: rgba(16, 24, 40, 0.55);
+        }
+        .notes-status {
+            flex: 0 0 auto;
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .notes-panel p {
+            max-width: 690px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════
            MODAL
            ═══════════════════════════════════════════════════ */
         .modal-overlay {
@@ -1865,6 +1894,12 @@
             }
             .project-body .sub {
                 font-size: 0.78rem;
+            }
+            .notes-panel {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.1rem 1.2rem;
             }
 
             .modal {

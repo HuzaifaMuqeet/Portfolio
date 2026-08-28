@@ -133,11 +133,7 @@
             github: 'https://github.com/huzaifamuqeet',
             live: null,
             images: [
-                'lyra-dashboard.png',
-                'lyra-kanban.png',
-                'lyra-ai-task.png',
-                'lyra-chat.png',
-                'lyra-reports.png'
+                'lyra-dashboard.png'
             ],
             badge: 'FLAGSHIP · FINAL YEAR PROJECT'
         }, {
@@ -162,9 +158,7 @@
             live: 'https://botfizz.com',
             images: [
                 'botfizz-flow.png',
-                'botfizz-chatbot.png',
-                'botfizz-dashboard.png',
-                'botfizz-analytics.png'
+                'botfizz-dashboard.png'
             ],
             badge: 'LIVE PRODUCT'
         }, {
@@ -186,10 +180,7 @@
             github: null,
             live: 'https://odrehm.com',
             images: [
-                'odrehm-storefront.png',
-                'odrehm-product.png',
-                'odrehm-checkout.png',
-                'odrehm-cart.png'
+                'odrehm-storefront.png'
             ],
             badge: 'FREELANCE · LIVE'
         }, {
@@ -213,10 +204,7 @@
             github: null,
             live: 'https://hospitalitytours.com.pk',
             images: [
-                'hospitality-home.png',
-                'hospitality-booking.png',
-                'hospitality-search.png',
-                'hospitality-details.png'
+                'hospitality-home.png'
             ],
             badge: 'FREELANCE · LIVE'
         }];
