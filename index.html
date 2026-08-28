@@ -734,30 +734,41 @@
                 </div>
 
                 <div class="reveal reveal-d2">
-                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/huzaifamuqeet2@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New portfolio inquiry" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_captcha" value="false" />
                         <div class="row">
                             <div class="group">
                                 <label for="cfName">Name</label>
-                                <input type="text" id="cfName" placeholder="Your name" required />
+                                <input type="text" id="cfName" name="name" placeholder="Your name" required />
                             </div>
                             <div class="group">
                                 <label for="cfEmail">Email</label>
-                                <input type="email" id="cfEmail" placeholder="your@email.com" required />
+                                <input type="email" id="cfEmail" name="email" placeholder="your@email.com" required />
                             </div>
                         </div>
                         <div class="group">
                             <label for="cfSubject">Subject</label>
-                            <input type="text" id="cfSubject" placeholder="What's this about?" />
+                            <input type="text" id="cfSubject" name="project_subject" placeholder="What's this about?" />
                         </div>
                         <div class="group">
                             <label for="cfMsg">Message</label>
-                            <textarea id="cfMsg" placeholder="Tell me about your project…" required></textarea>
+                            <textarea id="cfMsg" name="message" placeholder="Tell me about your project…" required></textarea>
                         </div>
                         <div class="submit-wrap">
                             <button type="submit" class="btn-primary" id="cfSubmit">Send Message →</button>
-                            <span class="success" id="cfSuccess">✓ Message prepared! Opening your mail client…</span>
+                            <span class="success" id="cfSuccess" role="status" aria-live="polite"></span>
                         </div>
                     </form>
+
+                    <aside class="feature-explainer reveal reveal-d3">
+                        <span class="section-tag">// how this feature works</span>
+                        <h3>A real message, not a pretend success state.</h3>
+                        <p><strong>Backend:</strong> A backend is the part of a website that receives data and does work away from the screen. This portfolio uses FormSubmit's free hosted backend, so no server is needed in this project.</p>
+                        <p><strong>Data flow:</strong> You enter your name, email, subject, and message. The browser sends those fields over HTTPS to FormSubmit. FormSubmit forwards the message to my inbox and returns a confirmation page when the delivery request is accepted.</p>
+                        <span class="explainer-proof">One feature · contact form · free hosted service</span>
+                    </aside>
                 </div>
             </div>
         </div>

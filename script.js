@@ -552,33 +552,19 @@
         /* ────────────────────────────────────────────────────
            CONTACT FORM
            ──────────────────────────────────────────────────── */
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            var name = document.getElementById('cfName').value.trim();
-            var email = document.getElementById('cfEmail').value.trim();
-            var subject = document.getElementById('cfSubject').value.trim() || 'Portfolio Inquiry';
-            var msg = document.getElementById('cfMsg').value.trim();
-
-            var body = encodeURIComponent('Hi Huzaifa,\n\nMy name is ' + name + ' (' + email + ').\n\n' + msg);
-            window.location.href = 'mailto:huzaifamuqeet2@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' +
-                body;
-
-            var success = document.getElementById('cfSuccess');
-            if (success) {
-                success.classList.add('show');
-                setTimeout(function() { success.classList.remove('show'); }, 4000);
-            }
-
+        (function initContactForm() {
+            var form = document.getElementById('contactForm');
             var submitBtn = document.getElementById('cfSubmit');
-            if (submitBtn) {
-                submitBtn.textContent = '✓ Sent!';
-                setTimeout(function() { submitBtn.textContent = 'Send Message →'; }, 3000);
-            }
+            var success = document.getElementById('cfSuccess');
+            if (!form || !submitBtn || !success) return;
 
-            setTimeout(function() {
-                document.getElementById('contactForm').reset();
-            }, 500);
-        }
+            form.addEventListener('submit', function() {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                success.textContent = 'Sending your message securely...';
+                success.classList.add('show');
+            });
+        })();
 
         /* ────────────────────────────────────────────────────
            INIT
