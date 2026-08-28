@@ -231,7 +231,7 @@
                 let imagesHTML = `
               <div class="project-images">
                 <div class="img-main">
-                  ${mainImg ? `<img src="images/${project.id}/${mainImg}" alt="${project.title} — main screenshot" loading="lazy" />` : ''}
+                  ${mainImg ? `<img src="images/${project.id}/${mainImg}" alt="${project.title} — main screenshot" loading="eager" fetchpriority="high" />` : ''}
                   <div class="img-placeholder">
                     <span class="icon">🖼️</span>
                     <span>${mainImg || 'Add screenshot'}</span>
@@ -241,7 +241,7 @@
                 ${thumbImgs.map(function(t, i) {
                   return `
                     <div class="img-thumb">
-                      ${t ? `<img src="images/${project.id}/${t}" alt="${project.title} — screenshot ${i+2}" loading="lazy" />` : ''}
+                      ${t ? `<img src="images/${project.id}/${t}" alt="${project.title} — screenshot ${i+2}" loading="eager" />` : ''}
                       <div class="img-placeholder">
                         <span class="icon">🖼️</span>
                         <span class="label">${t || 'screenshot'}</span>
@@ -344,7 +344,7 @@
                 '</div>' +
                 '<div class="modal-gallery">' +
                 '<div class="main-view">' +
-                '<img id="modalMainImg" src="" alt="" />' +
+                '<img id="modalMainImg" alt="Project screenshot" />' +
                 '<div class="no-img-placeholder" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;background:var(--bg3);color:var(--text-dim);font-family:var(--mono);font-size:0.8rem;flex-direction:column;gap:0.3rem;">' +
                 '<span style="font-size:2rem;">🖼️</span>' +
                 '<span>No screenshot available</span>' +
@@ -563,19 +563,33 @@
         /* ────────────────────────────────────────────────────
            CONTACT FORM
            ──────────────────────────────────────────────────── */
-        (function initContactForm() {
-            var form = document.getElementById('contactForm');
-            var submitBtn = document.getElementById('cfSubmit');
-            var success = document.getElementById('cfSuccess');
-            if (!form || !submitBtn || !success) return;
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            var name = document.getElementById('cfName').value.trim();
+            var email = document.getElementById('cfEmail').value.trim();
+            var subject = document.getElementById('cfSubject').value.trim() || 'Portfolio Inquiry';
+            var msg = document.getElementById('cfMsg').value.trim();
 
-            form.addEventListener('submit', function() {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-                success.textContent = 'Sending your message securely...';
+            var body = encodeURIComponent('Hi Huzaifa,\n\nMy name is ' + name + ' (' + email + ').\n\n' + msg);
+            window.location.href = 'mailto:huzaifamuqeet2@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' +
+                body;
+
+            var success = document.getElementById('cfSuccess');
+            if (success) {
                 success.classList.add('show');
-            });
-        })();
+                setTimeout(function() { success.classList.remove('show'); }, 4000);
+            }
+
+            var submitBtn = document.getElementById('cfSubmit');
+            if (submitBtn) {
+                submitBtn.textContent = '✓ Sent!';
+                setTimeout(function() { submitBtn.textContent = 'Send Message →'; }, 3000);
+            }
+
+            setTimeout(function() {
+                document.getElementById('contactForm').reset();
+            }, 500);
+        }
 
         /* ────────────────────────────────────────────────────
            INIT
