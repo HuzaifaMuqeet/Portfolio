@@ -291,10 +291,21 @@
 
             // Lazy-load images
             document.querySelectorAll('.project-images img').forEach(function(img) {
+                function fitGalleryToImage() {
+                    var gallery = img.closest('.project-images');
+                    if (gallery && img.naturalWidth > 0 && img.naturalHeight > 0) {
+                        gallery.style.aspectRatio = (img.naturalWidth / img.naturalHeight * 1.5).toFixed(3);
+                    }
+                }
+
                 if (img.complete && img.naturalWidth > 0) {
+                    fitGalleryToImage();
                     img.classList.add('loaded');
                 } else {
-                    img.addEventListener('load', function() { img.classList.add('loaded'); });
+                    img.addEventListener('load', function() {
+                        fitGalleryToImage();
+                        img.classList.add('loaded');
+                    });
                     img.addEventListener('error', function() {
                         var parent = img.closest('.img-main') || img.closest('.img-thumb');
                         if (parent) {
