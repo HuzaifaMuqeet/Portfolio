@@ -598,4 +598,5 @@
             buildModal();
             renderProjects();
             initReveal();
+            document.documentElement.classList.add('smooth-scroll');
         });
